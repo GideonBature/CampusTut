@@ -1,5 +1,5 @@
 const bcrypt = require("bcrypt");
-const User = require("../models/user");
+const { User } = require("../models/index");
 const { generateToken } = require("../utils/jwt");
 const { setAsync, delAsync } = require("../config/redis");
 

@@ -1,4 +1,4 @@
-const Review = require("../models/review");
+const { Review } = require("../models/index");
 
 exports.createReviews = async (req, res) => {
     const { learner_id, tutor_id, rating, comment } = req.query;

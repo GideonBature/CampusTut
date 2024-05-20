@@ -1,4 +1,4 @@
-const User = require("../models/user");
+const { User } = require("../models/index");
 
 exports.getAllUsers = async (req, res) => {
     const { type, department } = req.query;

@@ -1,4 +1,4 @@
-const Course = require("../models/course");
+const { Course } = require("../models/index");
 
 exports.getAllCourses = async (req, res) => {
     const { department } = req.query;
