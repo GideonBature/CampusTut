@@ -1,0 +1,35 @@
+// Register a new user
+POST http://localhost:8080/api/register
+Content-Type: application/json
+
+{
+    "name": "Gideon Bature",
+    "email": "gideonbatu@me.com",
+    "password": "password",
+    "department": "Computer Science",
+    "courseOfStudy": "Computer Science",
+    "level": "100",
+    "type": "tutor"
+}
+
+###
+
+// Login
+POST http://localhost:8080/api/login
+Content-Type: application/json
+
+{
+    "email": "gideonbatu@me.com",
+    "password": "password"
+}
+
+###
+
+GET http://localhost:8080/api/users
+consent-type: application/json
+Authorization: "2014/03/12/1997/52201EA"
+
+{
+    "type": "tutor",
+    "department": "Computer Science",
+}
