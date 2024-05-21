@@ -4,7 +4,7 @@ const { redis_uri } = require('./config');
 
 const redisClient = redis.createClient(redis_uri);
 
-client.on('error', (error) => {
+redisClient.on('error', (error) => {
     console.log(`Redis client not connected to the server: ${error}`);
 });
 

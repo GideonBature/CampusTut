@@ -27,7 +27,7 @@ exports.getUserById = async (req, res) => {
     }
 };
 
-exports.createUser = async (req, res) => {
+exports.updateUser = async (req, res) => {
     try {
         const user = await User.findByIdAndUpdate(req.params.id, req.body, { new: true });
 
@@ -38,4 +38,4 @@ exports.createUser = async (req, res) => {
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
-}
+};

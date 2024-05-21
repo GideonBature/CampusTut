@@ -4,7 +4,7 @@ const authMiddleware = require('../middlewares/authMiddleware');
 
 const router = express.Router();
 
-router.post('/reviews', authMiddleware, reviewController.createReview);
+router.post('/reviews', authMiddleware, reviewController.createReviews);
 router.get('/reviews', authMiddleware, reviewController.getAllReviews);
 router.get('/reviews/:id', authMiddleware, reviewController.getReviewById);
 
