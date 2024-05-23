@@ -1,7 +1,7 @@
 const bcrypt = require("bcrypt");
 const { User } = require("../models/index");
 const { generateToken } = require("../utils/jwt");
-const { setAsync, delAsync } = require("../config/redis");
+const { redisClient } = require("../config/redis");
 
 exports.register = async (req, res) => {
     const { name, email, password, department, courseOfStudy, level, type } = req.body;
@@ -35,10 +35,8 @@ exports.login = async (req, res) => {
 
         const token = generateToken(user);
 
-        res.json({ token });
-
         try {
-            await setAsync(token, JSON.stringify(user._id), 'EX', 3600);
+            await redisClient.set(token, JSON.stringify(user._id), { EX: 3600 });
             console.log('Token set successfully');
         } catch (error) {
             console.error('Failed to set token:', error);
