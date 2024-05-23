@@ -18,7 +18,7 @@ exports.getAllTutors = async (req, res) => {
 
 exports.getTutorById = async (req, res) => {
     try {
-        const tutor = await Tutor.findById(req.params.id).populate('user_id courses');
+        const tutor = await Tutor.findById(req.params.id).populate('user');
         if (!tutor) {
             return res.status(404).json({ message: "Tutor not found" });
         }
@@ -38,6 +38,18 @@ exports.updateTutor = async (req, res) => {
 
         res.json(tutor);
 
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
+
+exports.deleteTutor = async (req, res) => {
+    try {
+        const tutor = await Tutor.findByIdAndDelete(req.params.id);
+        if (!tutor) {
+            return res.status(404).json({ message: "Tutor not found" });
+        }
+        res.json({ message: "Tutor deleted successfully" });
     } catch (error) {
         res.status(500).json({ message: error.message });
     }

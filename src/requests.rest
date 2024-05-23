@@ -4,12 +4,12 @@ Content-Type: application/json
 
 {
     "name": "Gideon Bature",
-    "email": "gideonbat@me.com",
+    "email": "gideonb@m.com",
     "password": "password",
     "department": "Computer Science",
     "courseOfStudy": "Computer Science",
     "level": "100",
-    "type": "tutor"
+    "role": "tutor"
 }
 
 ### Login
@@ -17,17 +17,65 @@ POST http://localhost:8080/api/login
 Content-Type: application/json
 
 {
-    "email": "gideonbat@me.com",
+    "email": "gideonbatu@me.com",
     "password": "password"
 }
 
 ### Get all users
-
 GET http://localhost:8080/api/users
-consent-type: application/json
-Authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NGVjMjVhZWQ2NTVlNTE5YzM3Y2U4OSIsInR5cGUiOiJ0dXRvciIsImlhdCI6MTcxNjQzNzY0NiwiZXhwIjoxNzE2NTI0MDQ2fQ.TWmY03-R8TfVQFzQeTmellD-nLFKsXfNnnQE_frHKpI"
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NGNlMTc4YWYwNTdiYmZlNDRlZjIwNyIsImlhdCI6MTcxNjQ5ODA5OSwiZXhwIjoxNzE2NTg0NDk5fQ.abvKwtFjC96ntqRzQlaYuF7obpV5a73ie0Qv50yUMVE
 
 {
     "type": "tutor",
     "department": "Computer Science",
 }
+
+### Get User
+GET http://localhost:8080/api/users/664cdb369c7f76dcc94c9caf
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NGVjMjVhZWQ2NTVlNTE5YzM3Y2U4OSIsInR5cGUiOiJ0dXRvciIsImlhdCI6MTcxNjQ4ODQzNSwiZXhwIjoxNzE2NTc0ODM1fQ.BvAvvy2WOa_SIIjrv9JwKYVItTWusWC-QYXtbbuAHfs
+
+
+### Put User
+PUT http://localhost:8080/api/users/664cdb369c7f76dcc94c9caf
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NGVjMjVhZWQ2NTVlNTE5YzM3Y2U4OSIsInR5cGUiOiJ0dXRvciIsImlhdCI6MTcxNjQ4ODQzNSwiZXhwIjoxNzE2NTc0ODM1fQ.BvAvvy2WOa_SIIjrv9JwKYVItTWusWC-QYXtbbuAHfs
+
+{
+    "name": "Funom Bature",
+    "department": "Computer Engineering",
+    "courseOfStudy": "Computer Engineering",
+    "level": "200",
+    "type": "tutor"
+
+}
+
+### Delete User
+DELETE http://localhost:8080/api/users/664ec25aed655e519c37ce89
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NGVjMjVhZWQ2NTVlNTE5YzM3Y2U4OSIsInR5cGUiOiJ0dXRvciIsImlhdCI6MTcxNjQ4ODQzNSwiZXhwIjoxNzE2NTc0ODM1fQ.BvAvvy2WOa_SIIjrv9JwKYVItTWusWC-QYXtbbuAHfs
+
+
+
+### Get all tutors
+GET http://localhost:8080/api/tutors
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NGNlMTc4YWYwNTdiYmZlNDRlZjIwNyIsImlhdCI6MTcxNjQ5ODA5OSwiZXhwIjoxNzE2NTg0NDk5fQ.abvKwtFjC96ntqRzQlaYuF7obpV5a73ie0Qv50yUMVE
+
+### Get Tutor
+GET http://localhost:8080/api/tutors/664fb1ceb60bbb4af6304131
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NGNlMTc4YWYwNTdiYmZlNDRlZjIwNyIsImlhdCI6MTcxNjQ5ODA5OSwiZXhwIjoxNzE2NTg0NDk5fQ.abvKwtFjC96ntqRzQlaYuF7obpV5a73ie0Qv50yUMVE
+
+
+### Put Tutor
+PUT http://localhost:8080/api/tutors/664fb1ceb60bbb4af6304131
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NGNlMTc4YWYwNTdiYmZlNDRlZjIwNyIsImlhdCI6MTcxNjQ5ODA5OSwiZXhwIjoxNzE2NTg0NDk5fQ.abvKwtFjC96ntqRzQlaYuF7obpV5a73ie0Qv50yUMVE
+
+{
+    "user": {
+    "name": "Funom Bature",
+    "level": "300",
+},
+"course": ["MAT111, CPT111"]
+
+}
+
+### Delete Tutor
+DELETE http://localhost:8080/api/tutors/664fb1ceb60bbb4af6304131
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NGNlMTc4YWYwNTdiYmZlNDRlZjIwNyIsImlhdCI6MTcxNjQ5ODA5OSwiZXhwIjoxNzE2NTg0NDk5fQ.abvKwtFjC96ntqRzQlaYuF7obpV5a73ie0Qv50yUMVE

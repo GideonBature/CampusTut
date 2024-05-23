@@ -1,16 +1,22 @@
 const bcrypt = require("bcrypt");
-const { User } = require("../models/index");
+const { User, Tutor } = require("../models/index");
 const { generateToken } = require("../utils/jwt");
 const { redisClient } = require("../config/redis");
 
 exports.register = async (req, res) => {
-    const { name, email, password, department, courseOfStudy, level, type } = req.body;
+    const { name, email, password, department, courseOfStudy, level, role } = req.body;
 
     try {
         const hashedPassword = await bcrypt.hash(password, 10);
-        const user = new User({ name, email, password: hashedPassword, department, courseOfStudy, level, type });
+
+        const user = new User({ name, email, password: hashedPassword, department, courseOfStudy, level, role });
 
         await user.save();
+
+        if (user.role === 'tutor') {
+            const tutor = new Tutor({ user: user._id, availability: [], courses: [] });
+            await tutor.save();
+        }
         res.status(201).json({ message: "User registered successfully" });
     } catch (error) {
         res.status(500).json({ message: error.message });

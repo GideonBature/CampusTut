@@ -15,10 +15,12 @@ const authMiddleware = async (req, res, next) => {
     try {
         const decoded = verifyToken(token);
 
-        const user = await redisClient.get(decoded._id);
+        const user = await redisClient.get(token);
+
         if (!user) {
             return res.status(401).json({ message: 'Invalid token' });
         }
+
         req.user = JSON.parse(user);
         next();
     } catch (error) {
