@@ -1,5 +1,5 @@
 const { verifyToken } = require('../utils/jwt');
-const { getAsync } = require('../config/redis');
+const { redisClient } = require('../config/redis');
 
 const authMiddleware = async (req, res, next) => {
     const authHeader = req.headers['authorization'];
@@ -15,7 +15,7 @@ const authMiddleware = async (req, res, next) => {
     try {
         const decoded = verifyToken(token);
 
-        const user = await getAsync(decoded._id);
+        const user = await redisClient.get(decoded._id);
         if (!user) {
             return res.status(401).json({ message: 'Invalid token' });
         }

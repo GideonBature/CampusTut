@@ -57,7 +57,7 @@ exports.logout = async (req, res) => {
 
     try {
         const decoded = verifyToken(token);
-        await delAsync(decoded.id);
+        await redisClient.del(decoded.id);
         res.json({ message: 'User logged out successfully' });
     } catch (error) {
         res.status(500).json({ message: error.message });
