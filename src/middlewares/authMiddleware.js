@@ -2,17 +2,24 @@ const { verifyToken } = require('../utils/jwt');
 const { getAsync } = require('../config/redis');
 
 const authMiddleware = async (req, res, next) => {
-    const token = req.headers['authorization'];
-    if (!token) {
+    const authHeader = req.headers['authorization'];
+    if (!authHeader) {
         return res.status(401).json({ message: 'No token provided' });
     }
+
+    const token = authHeader.split(' ')[1];
+    if (!token) {
+        return res.status(401).json({ message: 'Malformed token' });
+    }
+
     try {
         const decoded = verifyToken(token);
-        const user = await getAsync(decoded.id);
+
+        const user = await getAsync(decoded._id);
         if (!user) {
             return res.status(401).json({ message: 'Invalid token' });
         }
-        req.user = decoded;
+        req.user = JSON.parse(user);
         next();
     } catch (error) {
         return res.status(401).json({ message: 'Invalid token' });

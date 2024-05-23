@@ -35,7 +35,16 @@ exports.login = async (req, res) => {
 
         const token = generateToken(user);
 
-        await setAsync(token, user._id.toString());
+        res.json({ token });
+
+        try {
+            await setAsync(token, JSON.stringify(user._id), 'EX', 3600);
+            console.log('Token set successfully');
+        } catch (error) {
+            console.error('Failed to set token:', error);
+            return res.status(500).json({ message: 'Failed to set token' });
+        }
+        
         res.json({ token });
     } catch (error) {
         res.status(500).json({ message: error.message });
