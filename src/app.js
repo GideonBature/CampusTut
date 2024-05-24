@@ -23,8 +23,8 @@ app.use((req, res, next) => {
 });
 
 app.use((err, req, res, next) => {
-    console.error(error.stack);
-    console.error('Something broke!');
+    console.error(err.message);
+    res.status(500).json({ message: err.message });
 });
 
 module.exports = app;

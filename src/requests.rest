@@ -4,12 +4,12 @@ Content-Type: application/json
 
 {
     "name": "Gideon Bature",
-    "email": "gideonb@m.com",
+    "email": "gideon@me.com",
     "password": "password",
-    "department": "Computer Science",
-    "courseOfStudy": "Computer Science",
-    "level": "100",
-    "role": "tutor"
+    "department": "Science",
+    "courseOfStudy": "Physics",
+    "level": "200",
+    "role": "learner"
 }
 
 ### Login
@@ -17,18 +17,14 @@ POST http://localhost:8080/api/login
 Content-Type: application/json
 
 {
-    "email": "gideonbatu@me.com",
+    "email": "gideon@me.com",
     "password": "password"
 }
 
 ### Get all users
 GET http://localhost:8080/api/users
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NGNlMTc4YWYwNTdiYmZlNDRlZjIwNyIsImlhdCI6MTcxNjQ5ODA5OSwiZXhwIjoxNzE2NTg0NDk5fQ.abvKwtFjC96ntqRzQlaYuF7obpV5a73ie0Qv50yUMVE
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NTA4N2U1MjI2NzFiYzAwNGZlNzJmNCIsImlhdCI6MTcxNjU1MzcxOSwiZXhwIjoxNzE2NjQwMTE5fQ.LEi_j6ZHkfpGWSdRA0ZxOYkIb2xIQyiPLQZFGMPb1zM
 
-{
-    "type": "tutor",
-    "department": "Computer Science",
-}
 
 ### Get User
 GET http://localhost:8080/api/users/664cdb369c7f76dcc94c9caf
@@ -36,8 +32,9 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NGVjMjVhZ
 
 
 ### Put User
-PUT http://localhost:8080/api/users/664cdb369c7f76dcc94c9caf
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NGVjMjVhZWQ2NTVlNTE5YzM3Y2U4OSIsInR5cGUiOiJ0dXRvciIsImlhdCI6MTcxNjQ4ODQzNSwiZXhwIjoxNzE2NTc0ODM1fQ.BvAvvy2WOa_SIIjrv9JwKYVItTWusWC-QYXtbbuAHfs
+PUT http://localhost:8080/api/users/664cdd8166b966c592ff0f28
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NGNlMTc4YWYwNTdiYmZlNDRlZjIwNyIsImlhdCI6MTcxNjUxNDY2OCwiZXhwIjoxNzE2NjAxMDY4fQ.h19FjnEl5tUOWr8NpK90AlDMsc8RF7CQRipvgaHj5kw
 
 {
     "name": "Funom Bature",
@@ -56,26 +53,84 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NGVjMjVhZ
 
 ### Get all tutors
 GET http://localhost:8080/api/tutors
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NGNlMTc4YWYwNTdiYmZlNDRlZjIwNyIsImlhdCI6MTcxNjQ5ODA5OSwiZXhwIjoxNzE2NTg0NDk5fQ.abvKwtFjC96ntqRzQlaYuF7obpV5a73ie0Qv50yUMVE
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NGNlMTc4YWYwNTdiYmZlNDRlZjIwNyIsImlhdCI6MTcxNjU0OTM0MCwiZXhwIjoxNzE2NjM1NzQwfQ.AvZ_3sko_V3ZdUDHoBCn67drWyznZDZXLSxS9SDJJGo
 
 ### Get Tutor
-GET http://localhost:8080/api/tutors/664fb1ceb60bbb4af6304131
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NGNlMTc4YWYwNTdiYmZlNDRlZjIwNyIsImlhdCI6MTcxNjQ5ODA5OSwiZXhwIjoxNzE2NTg0NDk5fQ.abvKwtFjC96ntqRzQlaYuF7obpV5a73ie0Qv50yUMVE
+GET http://localhost:8080/api/tutors/664fa8044ac71a0e23db276e
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NGNlMTc4YWYwNTdiYmZlNDRlZjIwNyIsImlhdCI6MTcxNjU0NjE2NSwiZXhwIjoxNzE2NjMyNTY1fQ.anii_4oUfTMm6wnUD0-UDMPlBUU2zfXMuUC8vmEUj-Y
 
 
-### Put Tutor
-PUT http://localhost:8080/api/tutors/664fb1ceb60bbb4af6304131
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NGNlMTc4YWYwNTdiYmZlNDRlZjIwNyIsImlhdCI6MTcxNjQ5ODA5OSwiZXhwIjoxNzE2NTg0NDk5fQ.abvKwtFjC96ntqRzQlaYuF7obpV5a73ie0Qv50yUMVE
+### Update Tutor
+PUT http://localhost:8080/api/tutors/664fa8044ac71a0e23db276e
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NGNlMTc4YWYwNTdiYmZlNDRlZjIwNyIsImlhdCI6MTcxNjU0OTM0MCwiZXhwIjoxNzE2NjM1NzQwfQ.AvZ_3sko_V3ZdUDHoBCn67drWyznZDZXLSxS9SDJJGo
 
 {
-    "user": {
-    "name": "Funom Bature",
-    "level": "300",
-},
-"course": ["MAT111, CPT111"]
+    "availability": ["Monday 9-11", "Tuesday 9-11", "Wednesday 9-11", "Thursday 9-11", "Friday 9-11"],
+    "courses": ["GST111", "FST111"]
 
 }
 
 ### Delete Tutor
 DELETE http://localhost:8080/api/tutors/664fb1ceb60bbb4af6304131
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NGNlMTc4YWYwNTdiYmZlNDRlZjIwNyIsImlhdCI6MTcxNjQ5ODA5OSwiZXhwIjoxNzE2NTg0NDk5fQ.abvKwtFjC96ntqRzQlaYuF7obpV5a73ie0Qv50yUMVE
+
+
+### Create Course
+POST http://localhost:8080/api/courses
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NGNlMTc4YWYwNTdiYmZlNDRlZjIwNyIsImlhdCI6MTcxNjU0OTM0MCwiZXhwIjoxNzE2NjM1NzQwfQ.AvZ_3sko_V3ZdUDHoBCn67drWyznZDZXLSxS9SDJJGo
+
+{
+    "name": "Introduction to Food Science",
+    "courseCode": "FST111"
+
+}
+
+### Get all courses
+GET http://localhost:8080/api/courses
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NGNlMTc4YWYwNTdiYmZlNDRlZjIwNyIsImlhdCI6MTcxNjU0OTM0MCwiZXhwIjoxNzE2NjM1NzQwfQ.AvZ_3sko_V3ZdUDHoBCn67drWyznZDZXLSxS9SDJJGo
+
+### Get Course
+GET http://localhost:8080/api/courses/66505d5321de43cb75d303b4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NGNlMTc4YWYwNTdiYmZlNDRlZjIwNyIsImlhdCI6MTcxNjU0OTM0MCwiZXhwIjoxNzE2NjM1NzQwfQ.AvZ_3sko_V3ZdUDHoBCn67drWyznZDZXLSxS9SDJJGo
+
+
+### Update Course
+PUT http://localhost:8080/api/courses/665001eb95127ff957b1c3dc
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NGNlMTc4YWYwNTdiYmZlNDRlZjIwNyIsImlhdCI6MTcxNjU0MjM4MywiZXhwIjoxNzE2NjI4NzgzfQ.q3uBueabU2kpVGnYMXYtc_JR72IzkHrbVBHixxlGanI
+
+{
+    "name": "Introduction to Food Science and Technology",
+    "courseCode": "fst 111"
+
+}
+
+### Delete Course
+DELETE http://localhost:8080/api/courses/665001eb95127ff957b1c3dc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NGNlMTc4YWYwNTdiYmZlNDRlZjIwNyIsImlhdCI6MTcxNjU0MjM4MywiZXhwIjoxNzE2NjI4NzgzfQ.q3uBueabU2kpVGnYMXYtc_JR72IzkHrbVBHixxlGanI
+
+
+
+### Create Review
+POST http://localhost:8080/api/reviews
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NTA4N2U1MjI2NzFiYzAwNGZlNzJmNCIsImlhdCI6MTcxNjU1MzcxOSwiZXhwIjoxNzE2NjQwMTE5fQ.LEi_j6ZHkfpGWSdRA0ZxOYkIb2xIQyiPLQZFGMPb1zM
+
+{
+    "learner_id": "665087e522671bc004fe72f4", 
+    "tutor_id": "664fb173275fe31d2694ab65",
+    "rating": 5,
+    "comment": "I recommend Him for physics and chemistry courses"
+}
+
+### Get all Reviews
+GET http://localhost:8080/api/reviews
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NTA4N2U1MjI2NzFiYzAwNGZlNzJmNCIsImlhdCI6MTcxNjU1MzcxOSwiZXhwIjoxNzE2NjQwMTE5fQ.LEi_j6ZHkfpGWSdRA0ZxOYkIb2xIQyiPLQZFGMPb1zM
+
+### Get Review
+GET http://localhost:8080/api/reviews/665094b1a7630154aaf59d43
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NTA4N2U1MjI2NzFiYzAwNGZlNzJmNCIsImlhdCI6MTcxNjU1MzcxOSwiZXhwIjoxNzE2NjQwMTE5fQ.LEi_j6ZHkfpGWSdRA0ZxOYkIb2xIQyiPLQZFGMPb1zM
+
+

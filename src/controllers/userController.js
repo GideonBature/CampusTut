@@ -1,10 +1,10 @@
 const { User } = require("../models/index");
 
 exports.getAllUsers = async (req, res) => {
-    const { type, department } = req.query;
+    const { role, department } = req.query;
     const query = { };
 
-    if (type) query.type = type;
+    if (role) query.role = role;
     if (department) query.department = department;
 
     try {
