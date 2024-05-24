@@ -1,4 +1,6 @@
 const express = require('express');
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const routes = require('./routes/index');
@@ -21,6 +23,8 @@ app.use((req, res, next) => {
     req.delAsync = delAsync;
     next();
 });
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.use((err, req, res, next) => {
     console.error(err.message);

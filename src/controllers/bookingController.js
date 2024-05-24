@@ -1,15 +1,34 @@
-const { Booking } = require("../models/index");
+const { Booking, User, Tutor, Course } = require("../models/index");
 
 exports.createBooking = async (req, res) => {
-    const { learner_id, tutor_id, course_id, time_slot } = req.body;
+    const { learner_id, tutor_id, course_id, time_slot, status } = req.body;
+
+    console.log(tutor_id);
 
     try {
+
+        const learner = await User.findById(learner_id);
+        if (!learner || learner.role !== "learner") {
+            return res.status(404).json({ message: "Learner not found" });
+        };
+
+        const tutor = await Tutor.findById(tutor_id).populate('user');
+        if (!tutor || tutor.user.role !== "tutor") {
+            return res.status(404).json({ message: "Tutor not found" });
+        };
+
+        const course = await Course.findById(course_id);
+        if (!course) {
+            return res.status(404).json({ message: "Course not found" });
+        };
+
+        
         const booking = new Booking({
             learner_id,
             tutor_id,
             course_id,
             time_slot,
-            status: "pending",
+            status,
         });
 
         await booking.save();
