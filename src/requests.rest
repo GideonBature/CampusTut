@@ -23,7 +23,7 @@ Content-Type: application/json
 
 ### Get all users
 GET http://localhost:8080/api/users
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NTA4N2U1MjI2NzFiYzAwNGZlNzJmNCIsImlhdCI6MTcxNjU2NDAxOSwiZXhwIjoxNzE2NjUwNDE5fQ.9kGAiSdLzIBCDEe0zbXS2XwCmtkd3ihuLmI-yreTaSQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NTBiMjFmZmM1MzUxOGExMzhlNDYyOCIsImlhdCI6MTcxNjYwMjA0MSwiZXhwIjoxNzE2Njg4NDQxfQ.Fab5_lz-5q95r8GQFzxyInPO0nwtsjcKzfBYZTugZ4A
 
 
 ### Get User
@@ -53,7 +53,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NGVjMjVhZ
 
 ### Get all tutors
 GET http://localhost:8080/api/tutors
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NTBiMjFmZmM1MzUxOGExMzhlNDYyOCIsImlhdCI6MTcxNjU2NDUyMCwiZXhwIjoxNzE2NjUwOTIwfQ.S4ctpnPrnjkevdxqSq5Dsn4rQjDwRQJSMO1vml9o2bQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NTBiMjFmZmM1MzUxOGExMzhlNDYyOCIsImlhdCI6MTcxNjYwMjA0MSwiZXhwIjoxNzE2Njg4NDQxfQ.Fab5_lz-5q95r8GQFzxyInPO0nwtsjcKzfBYZTugZ4A
 
 ### Get Tutor
 GET http://localhost:8080/api/tutors/6650b21ffc53518a138e462a
@@ -89,7 +89,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NGNlMTc4Y
 
 ### Get all courses
 GET http://localhost:8080/api/courses
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NTA4N2U1MjI2NzFiYzAwNGZlNzJmNCIsImlhdCI6MTcxNjU2NDAxOSwiZXhwIjoxNzE2NjUwNDE5fQ.9kGAiSdLzIBCDEe0zbXS2XwCmtkd3ihuLmI-yreTaSQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NTBiMjFmZmM1MzUxOGExMzhlNDYyOCIsImlhdCI6MTcxNjYwMjA0MSwiZXhwIjoxNzE2Njg4NDQxfQ.Fab5_lz-5q95r8GQFzxyInPO0nwtsjcKzfBYZTugZ4A
 
 ### Get Course
 GET http://localhost:8080/api/courses/66505d5321de43cb75d303b4
@@ -116,7 +116,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NGNlMTc4Y
 ### Create Review
 POST http://localhost:8080/api/reviews
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NTA4N2U1MjI2NzFiYzAwNGZlNzJmNCIsImlhdCI6MTcxNjU1MzcxOSwiZXhwIjoxNzE2NjQwMTE5fQ.LEi_j6ZHkfpGWSdRA0ZxOYkIb2xIQyiPLQZFGMPb1zM
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NTBiMjFmZmM1MzUxOGExMzhlNDYyOCIsImlhdCI6MTcxNjYwMjA0MSwiZXhwIjoxNzE2Njg4NDQxfQ.Fab5_lz-5q95r8GQFzxyInPO0nwtsjcKzfBYZTugZ4A
 
 {
     "learner_id": "665087e522671bc004fe72f4", 
@@ -127,7 +127,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NTA4N2U1M
 
 ### Get all Reviews
 GET http://localhost:8080/api/reviews
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NTA4N2U1MjI2NzFiYzAwNGZlNzJmNCIsImlhdCI6MTcxNjU2NDAxOSwiZXhwIjoxNzE2NjUwNDE5fQ.9kGAiSdLzIBCDEe0zbXS2XwCmtkd3ihuLmI-yreTaSQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NTBiMjFmZmM1MzUxOGExMzhlNDYyOCIsImlhdCI6MTcxNjYwMjA0MSwiZXhwIjoxNzE2Njg4NDQxfQ.Fab5_lz-5q95r8GQFzxyInPO0nwtsjcKzfBYZTugZ4A
 
 ### Get Review
 GET http://localhost:8080/api/reviews/665094b1a7630154aaf59d43
@@ -150,7 +150,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NTBiMjFmZ
 
 ### Get all Bookings
 GET http://localhost:8080/api/bookings
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NTBiMjFmZmM1MzUxOGExMzhlNDYyOCIsImlhdCI6MTcxNjU2NDUyMCwiZXhwIjoxNzE2NjUwOTIwfQ.S4ctpnPrnjkevdxqSq5Dsn4rQjDwRQJSMO1vml9o2bQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NTBiMjFmZmM1MzUxOGExMzhlNDYyOCIsImlhdCI6MTcxNjYwMjA0MSwiZXhwIjoxNzE2Njg4NDQxfQ.Fab5_lz-5q95r8GQFzxyInPO0nwtsjcKzfBYZTugZ4A
 
 ### Get Booking
 GET http://localhost:8080/api/bookings/6650b4d43f2915f097fe2381
