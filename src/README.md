@@ -69,6 +69,37 @@ CampusTut is a web application designed to connect learners with tutors for acad
 - Access the API documentation at http://localhost:8080/api-docs to interact with the API endpoints using Swagger UI.
 - Use tools like Postman or cURL to make requests to the API endpoints.
 
+### Example API Requests
+
+#### Register a new user
+
+```bash
+curl -X POST http://localhost:8080/api/register \
+  -H "Content-Type: application/json" \
+  -d '{
+        "name": "Gideon Bature",
+        "email": "gideon.bature@example.com",
+        "password": "password",
+        "role": "learner"
+      }'
+```
+
+#### Login
+
+```bash
+curl -X POST http://localhost:8080/api/login \
+  -H "Content-Type: application/json" \
+  -d '{
+        "email": "gideon.bature@example.com",
+        "password": "password"
+      }'
+```
+
+#### Get all users
+```bash
+curl -X GET http://localhost:8080/api/users
+```
+
 ## Contributing
 
 Contributions are welcome! Please fork the repository and submit a pull request.
