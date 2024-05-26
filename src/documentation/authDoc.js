@@ -72,9 +72,11 @@
  *              schema:
  *                type: object
  *                properties:
- *                  token:
+ *                  message:
  *                    type: string
- *                    description: JWT token
+ *                    description: The message returned
+ *              example:
+ *                message: "User registered successfully"
  *       400:
  *         description: Bad request
  *       500:
@@ -117,6 +119,8 @@
  *                  token:
  *                    type: string
  *                    description: JWT token
+ *              example:
+ *                token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
  *       400:
  *         description: Invalid credentials
  *       500:
